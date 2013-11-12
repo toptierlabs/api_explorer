@@ -1,0 +1,7 @@
+<div id="clear_parameters" title="Clear parameters"></div>
+
+<h2>Parameters</h2>
+<% parameters.each do |parameter| %>
+	<div class="editor-label"> <%= parameter['name'] %> </div>
+	<div class="editor-field"> <input type="text" name="<%= parameter['name']%>" /> </div>
+<% end %>

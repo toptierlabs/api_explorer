@@ -1,0 +1,38 @@
+<div class="panel_header">
+	API Explorer
+</div>
+<div class="panel_body">
+	<select class="methods" id="api_methods">
+		<option value="">Select one</option>
+		<%= @methods.each do |method| %>
+			<option data-method="<%= method["method"] %>" value="<%= method["url"] %>"><%= method["name"]%> (<%= method["method"]%> <%= method["url"]%> )</option>
+		<% end %>
+		
+		
+	</select>
+
+	<div id="method_description"></div>
+	
+
+	
+	<form class="mvm" id="graph_form" action="" method="get">
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<span id="api_prefix" title="Show host"> → / </span>
+					</td>
+					<td class="full_width_cell">
+						<input type="text" class="inputtext" id="graph_path" name="path">
+					</td>
+					<td></td>
+					<td>
+						<button value="1" class="" id="api_explorer_submit" type="submit">Try</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	<div id="parameters_container"></div>
+
+</div>

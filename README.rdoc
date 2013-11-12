@@ -1,0 +1,13 @@
+= ApiExplorer
+
+This project is intended to be mounte on an existing Rails Application.
+
+
+The only precondition is that it requires a multithreaded rails server. 
+
+Instructions:
+
+- gem "thin", "~> 1.6.1"
+- bundle install
+- Add to development.rb (or production.rb): config.thread_safe!
+- Start the server with "thin start --threaded" 
