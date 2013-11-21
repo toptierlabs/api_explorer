@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ApiExplorer::VERSION
   s.authors     = ["Anthony Figueroa"]
   s.email       = ["afigueroa@toptierlabs.com"]
-  s.homepage    = "http://www.toptierlabs.com"
+  s.homepage    = "http://www.github.com/toptierlabs/api_explorer"
   s.summary     = "API Explorer is a tool that reads a specification and creates a console where developers can test webservices"
   s.description = "https://github.com/toptierlabs/api_explorer"
 
