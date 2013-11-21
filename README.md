@@ -113,7 +113,6 @@ http://localhost:3000/api_explorer
 
 - Fork project
 - Add features
-- Run tests
 - Send pull request
 
 ## License
