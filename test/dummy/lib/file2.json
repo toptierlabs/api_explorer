@@ -4,16 +4,14 @@
 		"url": "v1/users",
 		"description": "The index of users",
 		"method": "GET",
-		"parameters": [{"name": "API_TOKEN"}],
-		"http_headers": [{"X-USER-ID": "ASSAJISIJA"}]
+		"parameters": [{"name": "API_TOKEN"}]
 	}, 
 	{
 		"name": "User login",
 		"url": "v1/users/login",
 		"description": "Users login",
 		"method": "POST",
-		"parameters": [{"name": "API_TOKEN"}, {"name": "email"}, {"name": "password"}],
-		"http_headers": [{"X-USER-ID": "6"}, {"X-API-ID": "JAOSIJAS"}]
+		"parameters": [{"name": "API_TOKEN"}, {"name": "email"}, {"name": "password"}]
 	}
 	]
 }
