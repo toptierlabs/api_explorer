@@ -119,3 +119,4 @@ http://localhost:3000/api_explorer
 ## License
 
 See LICENSE file for details
+Developed at [TopTier labs](http://www.toptierlabs.com/ "TopTier labs")
