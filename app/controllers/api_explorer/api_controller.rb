@@ -20,6 +20,7 @@ module ApiExplorer
 
     def execute
       require 'net/http'
+      require 'coderay'
       headers = params[:header][:name].zip(params[:header][:value])
       headers.select!{|header| !header[0].empty? && !header[1].empty?}
       

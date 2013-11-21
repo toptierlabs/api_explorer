@@ -1,7 +1,9 @@
 PATH
   remote: .
   specs:
-    api_explorer (0.0.1)
+    api_explorer (0.0.2)
+      coderay (~> 1.1.0)
+      jquery-rails
       rails (~> 3.2.13)
 
 GEM
@@ -100,7 +102,6 @@ PLATFORMS
 
 DEPENDENCIES
   api_explorer!
-  coderay (~> 1.1.0)
   jquery-rails
   sqlite3
   thin (~> 1.6.1)
