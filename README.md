@@ -16,7 +16,7 @@ API Explorer is a tool that reads a specification and creates a console where de
 Given that it makes a request to the same server, it requires a multi-threaded server. On this example we will use 'thin' but it should work with 'unicorn' as well.
 
 
-## Configure thin server on threaded mode (if you are not using it) 
+## Configure thin server on threaded mode (it should work with unicorn also) 
 
 Add thin to the Gemfile.
 ```
@@ -51,19 +51,21 @@ gem 'api_explorer'
 Create a file named ws_specification.json (or any name you desire) and place it on /lib. An example can be:
 
 ```
-{ “methods”: [ 
-  { “name”: “Users index”, 
-    “url”: “v1/users”, 
-    “description”: “The index of users”, 
-    “method”: “GET”, 
-    “parameters”: [{“name”: “API_TOKEN”}] 
-  }, 
-  { “name”: “User login”, 
-    “url”: “v1/users/login”, 
-    “description”: “Users login”, 
-    “method”: “POST”, 
-    “parameters”: [{“name”: “API_TOKEN”}, {“name”: “email”}, {“name”: “password”}] } ] 
-  }
+{ "methods": [ 
+	  { "name": "Users index", 
+	    "url": "v1/users", 
+	    "description": "The index of users", 
+	    "method": "GET", 
+	    "parameters": [{"name": "API_TOKEN"}] 
+	  }, 
+	  { "name": "User login", 
+	    "url": "v1/users/login", 
+	    "description": "Users login", 
+	    "method": "POST", 
+	    "parameters": [{"name": "API_TOKEN"}, {"name": "email"}, {"name": "password"}] 
+	  } 
+  ] 
+}
 ```
 
 Create an initializer in /config/initializers/api_explorer.rb with the following content:
