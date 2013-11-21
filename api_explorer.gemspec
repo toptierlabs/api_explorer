@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "API Explorer is a tool that reads a specification and creates a console where developers can test webservices"
   s.description = "https://github.com/toptierlabs/api_explorer"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.13"
