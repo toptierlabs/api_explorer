@@ -1,0 +1,36 @@
+<div id="authentication_container" class="fields_section">
+	<div id="clear_authentication" title="Clear authentication"></div>
+	<div id="minimize_authentication" class="minimize" title="Minimize"></div>
+
+	<h2>Authentication</h2>
+	<br />
+	<div class="editor-label"> Method</div>
+		
+	<%= select_tag 'authentication_type', options_for_select([['None', ''], ['Basic', 'basic_auth'], ["Hash URL", 'hash_url_auth']]) %>
+	<div id="basic_auth" class="auth_wrapper">
+		<div class="editor-label"> User</div>
+		<div class="editor-field"> <input type="text" placeholder="Value" name="auth[basic_auth_user]" class="parameter_input"/> </div>
+		<div class="editor-label"> Password</div>
+		<div class="editor-field"> <input type="text" placeholder="Value" name="auth[basic_auth_password]" class="parameter_input"/> </div>
+	</div>
+
+	<div id="hash_url_auth" class="auth_wrapper">
+		<div class="auth_method_description">
+			Hash authentication uses HMAC-SHA1 method to encrypt the requested URL using the specified secret key. It sends on the specified HTTP header the results, encoding it using Base 64.
+		</div>
+		<div class="information_field">
+			<div class="editor-label">Hash method</div>
+			<div class="editor-label">HMAC-SHA1</div>
+			<div style="clear: both"></div>
+		</div>
+		<div class="editor-label">Header field</div>
+		<div class="editor-field"> <input type="text" placeholder="Value" name="auth[header_field]" class="parameter_input"/> </div>
+		<div class="editor-label">Secret Key</div>
+		<div class="editor-field"> <input type="text" placeholder="Value" name="auth[secret_key]" class="parameter_input"/> </div>
+		
+	</div>
+
+	<div id="hash_url_auth">
+	</div>
+
+</div>

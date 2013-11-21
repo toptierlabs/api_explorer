@@ -7,11 +7,11 @@ require "api_explorer/version"
 Gem::Specification.new do |s|
   s.name        = "api_explorer"
   s.version     = ApiExplorer::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ApiExplorer."
-  s.description = "TODO: Description of ApiExplorer."
+  s.authors     = ["Anthony Figueroa"]
+  s.email       = ["afigueroa@toptierlabs.com"]
+  s.homepage    = "http://www.toptierlabs.com"
+  s.summary     = "API Explorer is a tool that reads a specification and creates a console where developers can test webservices"
+  s.description = "TODO"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]

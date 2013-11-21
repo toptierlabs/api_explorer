@@ -1,7 +1,8 @@
 <div id="clear_parameters" title="Clear parameters"></div>
+<div id="minimize_parameters" class="minimize" title="Minimize"></div>
 
 <h2>Parameters</h2>
 <% parameters.each do |parameter| %>
 	<div class="editor-label"> <%= parameter['name'] %> </div>
-	<div class="editor-field"> <input type="text" name="<%= parameter['name']%>" /> </div>
+	<div class="editor-field"> <input type="text" placeholder="Value" name="<%= parameter['name']%>" class="parameter_input"/> </div>
 <% end %>
