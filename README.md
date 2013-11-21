@@ -30,7 +30,7 @@ bundle install
 ```
 
 
-Set thread dsafe mode in development.rb (or the right environment) 
+Set thread safe mode in development.rb (or the right environment) 
 
 ```
 config.thread_safe!
