@@ -118,4 +118,6 @@ http://localhost:3000/api_explorer
 ## License
 
 See LICENSE file for details
+
+## Author
 Developed at [TopTier labs](http://www.toptierlabs.com/ "TopTier labs")
