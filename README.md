@@ -116,6 +116,13 @@ http://localhost:3000/api_explorer
 - Add features
 - Send pull request
 
+## Next improvements
+
+- Better error handling
+- Test with unicorn
+- More authentication methods
+- Support absolute URLs to test 3rd party APIs.
+
 ## License
 
 See LICENSE file for details
