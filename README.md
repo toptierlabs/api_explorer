@@ -17,7 +17,7 @@ API Explorer is a tool that reads a specification and creates a console where de
 Given that it makes a request to the same server, it requires a multi-threaded server. On this example we will use 'thin' and 'unicorn'.
 
 
-## Configure thin server on threaded mode (it should work with unicorn also) 
+## Configure thin server on threaded mode
 
 Add thin to the Gemfile.
 ```
