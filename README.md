@@ -14,7 +14,7 @@ API Explorer is a tool that reads a specification and creates a console where de
 - Supports HTTP basic authentication and HMAC-SHA1 hash authentication.
 
 ## Precondition
-Given that it makes a request to the same server, it requires a multi-threaded server. On this example we will use 'thin' but it should work with 'unicorn' as well.
+Given that it makes a request to the same server, it requires a multi-threaded server. On this example we will use 'thin' and 'unicorn'.
 
 
 ## Configure thin server on threaded mode (it should work with unicorn also) 
@@ -24,22 +24,45 @@ Add thin to the Gemfile.
 gem 'thin', '~> 1.6.1'
 ```
 
-Bundle install 
-```
-bundle install
-```
-
-
 Set thread safe mode in development.rb (or the right environment) 
 
 ```
 config.thread_safe!
 ```
 
+Bundle install 
+```
+bundle install
+```
+
 Test the server by running it with:
 ```
 thin start --threaded
 ```
+
+## Alternative - Configure unicorn server 
+
+Add unicorn to the Gemfile.
+```
+gem "unicorn", "~> 4.7.0"
+```
+
+Add the file 'unicorn.conf' to config/ with the following content:
+
+```
+worker_processes 3
+```
+
+Bundle install 
+```
+bundle install
+```
+
+Test the server by running it with:
+```
+unicorn_rails -c config/unicorn.conf
+```
+
 
 ## Install the gem
 
@@ -73,7 +96,7 @@ Create an initializer in /config/initializers/api_explorer.rb with the following
 
 ```
 ApiExplorer::use_file = true 
-ApiExplorer::json_path = ‘lib/ws_specification.json’
+ApiExplorer::json_path = 'lib/ws_specification.json'
 ```
 
 Another option can be:
@@ -98,16 +121,22 @@ That's it. Its ready to go.
 
 ## Run
 
-Start thin
+Start thin (or unicorn)
 
 ```
 thin start --threaded
 ```
 
+or 
+
+```
+unicorn_rails -c config/unicorn.conf
+```
+
 And go to 
 
 ```
-http://localhost:3000/api_explorer
+http://<base_path>/api_explorer 
 ```
 
 ## Contribute
@@ -119,7 +148,6 @@ http://localhost:3000/api_explorer
 ## Next improvements
 
 - Better error handling
-- Test with unicorn
 - Test with Rails 4
 - More authentication methods
 - Support absolute URLs to test 3rd party APIs.
