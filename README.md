@@ -75,20 +75,23 @@ gem 'api_explorer'
 Create a file named ws_specification.json (or any name you desire) and place it on /lib. An example can be:
 
 ```
-{ "methods": [ 
-	  { "name": "Users index", 
-	    "url": "v1/users", 
-	    "description": "The index of users", 
-	    "method": "GET", 
-	    "parameters": [{"name": "API_TOKEN"}] 
-	  }, 
-	  { "name": "User login", 
-	    "url": "v1/users/login", 
-	    "description": "Users login", 
-	    "method": "POST", 
-	    "parameters": [{"name": "API_TOKEN"}, {"name": "email"}, {"name": "password"}] 
-	  } 
-  ] 
+{ 
+	"methods": [ 
+		{ 
+			"name": "Users index", 
+			"url": "v1/users", 
+			"description": "The index of users", 
+			"method": "GET", 
+			"parameters": [{"name": "API_TOKEN"}] 
+		}, 
+		{ 
+			"name": "User login", 
+			"url": "v1/users/login", 
+			"description": "Users login", 
+			"method": "POST", 
+			"parameters": [{"name": "API_TOKEN"}, {"name": "email"}, {"name": "password"}] 
+		} 
+ 	] 
 }
 ```
 
