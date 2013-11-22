@@ -180,6 +180,8 @@ $(document).ready(function(){
 
 
 			response_placeholder.slideDown();
+			response_placeholder.find(".tab_response").find('input[type="radio"]').prop("checked", true);
+
 			$('html, body').animate({
 		        scrollTop: response_placeholder.offset().top + 50
 		    }, 500);
@@ -187,7 +189,9 @@ $(document).ready(function(){
 
 			console.log(response);
 
-		})
+		}).error(function() { 
+			alert('There was an error executing the webservice. Please check if you are using a multithreaded server');
+		});
 
 	});
 })

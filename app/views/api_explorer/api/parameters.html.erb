@@ -4,5 +4,5 @@
 <h2>Parameters</h2>
 <% parameters.each do |parameter| %>
 	<div class="editor-label"> <%= parameter['name'] %> </div>
-	<div class="editor-field"> <input type="text" placeholder="Value" name="<%= parameter['name']%>" class="parameter_input"/> </div>
+	<div class="editor-field"> <input type="text" placeholder="Value" name="<%= parameter['name']%>" class="parameter_input" value="<%= values['api_explorer_' + parameter['name'] ] %>"/> </div>
 <% end %>

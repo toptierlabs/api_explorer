@@ -13,7 +13,7 @@ module ApiExplorer
 
       render :json=> {
         :parameters_html=> (
-          render_to_string("api_explorer/api/parameters", :locals=>{:parameters=>@method['parameters']} ,:layout => false)
+          render_to_string("api_explorer/api/parameters", :locals=>{:parameters=>@method['parameters'], :values=>session} ,:layout => false)
           ), :description=>@method['description']
       }
     end
@@ -39,7 +39,13 @@ module ApiExplorer
         request = Net::HTTP::Delete.new(uri.request_uri) 
       end
       
-      request.set_form_data( params.except([:action, :controller, :header, :authentication_type, :auth]) )
+
+      form_hash = params.except([:action, :controller, :header, :authentication_type, :auth])
+      form_hash.keys.each do |key|
+        session['api_explorer_' + key.to_s] = form_hash[key]
+      end      
+
+      request.set_form_data( form_hash )
       headers.each do |header|
         request[header[:name]] = header[:value]
       end

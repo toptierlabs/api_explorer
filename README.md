@@ -120,6 +120,7 @@ http://localhost:3000/api_explorer
 
 - Better error handling
 - Test with unicorn
+- Test with Rails 4
 - More authentication methods
 - Support absolute URLs to test 3rd party APIs.
 

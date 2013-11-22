@@ -42,12 +42,21 @@
 	width: 924px;		
 }
 
+.api_explorer .disclaimer {
+	margin: 0 auto;
+	width: 924px;
+	margin-bottom: 20px;
+	font-size: 0.6em;
+	margin-top: 2px;
+	text-align: right;
+}
+
 .api_explorer .panel {
 	background: #fff;
 	border: 1px solid;
 	border-color: #d6d7da #d5d8dd #c7c8ca;
 	border-radius: 3px;
-	margin-bottom: 20px;
+	margin-bottom: 0;
 }
 
 .api_explorer .panel_header{
@@ -56,6 +65,8 @@
 	border-top-right-radius: 3px;
 	background-color: #f6f7f8;
 	padding: 12px;
+	font-weight: bold;
+	font-size: 1.3em;
 }
 
 
