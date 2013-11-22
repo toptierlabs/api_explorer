@@ -9,7 +9,7 @@
 	display: table;
 	border-collapse: separate;
 	border-color: gray;
-	border-spacing: 0 !important;
+	border-spacing: 0;
 }
 .api_explorer tbody {
 	display: table-row-group;
@@ -19,7 +19,6 @@
 
 .api_explorer tr {
 	display: table-row;
-	vertical-align: inherit;
 	border-color: inherit;
 }
 
