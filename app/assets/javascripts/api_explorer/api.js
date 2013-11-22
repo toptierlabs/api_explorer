@@ -1,9 +1,9 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 $(document).ready(function(){
-	
+
 	// Match all containers and placeholders
-	var container = $("body.api_explorer");
+	var container = $("body.api_explorer"); // In order to avoid naming colisions, all the selectors are within this context
 	var parameters_container = $("#parameters_container", container);
 	var headers_container = $("#headers_container", container);
 	var authentication_container = $("#authentication_container", container);	
