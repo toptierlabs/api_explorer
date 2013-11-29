@@ -12,6 +12,7 @@ API Explorer is a tool that reads a specification and creates a console where de
 - Specify Request parameters
 - Show description of the web service, which can be used as a documentation of the web services.
 - Supports HTTP basic authentication and HMAC-SHA1 hash authentication.
+- Parameters in the form of:  user[name] or company[owner][name] are automatically converted into hash parameters. 
 
 ## Precondition
 Given that it makes a request to the same server, it requires a multi-threaded server. On this example we will use 'thin' and 'unicorn'.
