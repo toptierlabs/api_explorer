@@ -15,7 +15,7 @@ $(function () {
 
   // Change selected method
   select_method.change(function(){
-    
+
     $("#graph_path", container).val($(this).val());
     
     // Selected position
@@ -159,7 +159,7 @@ $(function () {
   });
 
   // Make request
-  $("#api_explorer_submit", container).click(function(e){
+  $("#api_explorer_submit", container).click(function(e) {
     e.preventDefault();
 
     // Build array of parameters

@@ -34,23 +34,32 @@ module ApiExplorer
       http = Net::HTTP.new(uri.host, uri.port) 
 
       if params[:method].upcase == 'GET'
-        request = Net::HTTP::Get.new(uri.request_uri) 
+        request = Net::HTTP::Get.new(uri.request_uri, {'Content-Type' =>'application/json'}) 
       elsif params[:method].upcase == 'POST'
-        request = Net::HTTP::Post.new(uri.request_uri) 
+        request = Net::HTTP::Post.new(uri.request_uri, {'Content-Type' =>'application/json'}) 
       elsif params[:method].upcase == 'PUT'
-        request = Net::HTTP::Put.new(uri.request_uri) 
+        request = Net::HTTP::Put.new(uri.request_uri, {'Content-Type' =>'application/json'}) 
       elsif params[:method].upcase == 'DELETE'
-        request = Net::HTTP::Delete.new(uri.request_uri) 
+        request = Net::HTTP::Delete.new(uri.request_uri, {'Content-Type' =>'application/json'}) 
       end
       
       # Store parameters on session
       form_hash = params.except([:action, :controller, :header, :authentication_type, :auth])
+      
       form_hash.keys.each do |key|
-        session['api_explorer_' + key.to_s] = form_hash[key]
+        if form_hash[key].is_a?(Hash)
+          h_and_key = to_form_name({ key=> form_hash[key] } ).split("=")
+          session['api_explorer_' + h_and_key.first] = h_and_key.second
+        else
+          session['api_explorer_' + key.to_s] = form_hash[key] 
+        end
       end      
-
+      
+      
       # Set form data and headers
-      request.set_form_data( form_hash )
+      request.body = form_hash.to_hash.to_json
+
+      #request.set_form_data( to_http_params(form_hash) )
       headers.each do |header|
         request[header[:name]] = header[:value]
       end
@@ -104,6 +113,26 @@ module ApiExplorer
           
     end
   protected
+
+    def to_form_name(hash, rec=nil)
+      hmap = hash.map do |k, v|
+        wrap_left = !rec.nil? ? "[" : ""
+        wrap_right = !rec.nil? ? "]" : ""
+
+        if v.is_a?(Hash)
+          "#{wrap_left}#{k}#{wrap_right}" + to_form_name(v, true)
+        else
+          "#{wrap_left}#{k}#{wrap_right}=#{v}"
+        end
+      end
+
+      if rec
+        hmap.first
+      else
+        hmap.join('&')
+      end
+    end
+
 
     # Read file with methods
     def read_file

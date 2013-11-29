@@ -4,7 +4,7 @@
 		"url": "v1/users",
 		"description": "The index of users",
 		"method": "GET",
-		"parameters": [{"name": "API_TOKEN"}]
+		"parameters": [{"name": "API_TOKEN"}, {"name": "array[field1]"}, {"name": "outer[inner][fieldX]"}]
 	}, 
 	{
 		"name": "User login",
