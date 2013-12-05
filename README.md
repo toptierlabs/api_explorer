@@ -162,3 +162,6 @@ See LICENSE file for details
 
 ## Author
 Developed at [TopTier labs](http://www.toptierlabs.com/ "TopTier labs")
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/toptierlabs/api_explorer/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
